@@ -1,0 +1,20 @@
+.footer {
+  background-color: #242424; /* Dark background */
+  color: #ffffff; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 1rem 0; /* Padding around the footer */
+  position: fixed; /* Stick the footer to the bottom */
+  bottom: 0;
+  width: 100%; /* Full width footer */
+}
+
+.footer p {
+  margin: 0; /* Remove margin around paragraphs */
+  font-size: 0.9rem; /* Slightly smaller text */
+}
+
+@media (max-width: 768px) {
+  .footer {
+    font-size: 0.8rem; /* Smaller text on mobile */
+  }
+}

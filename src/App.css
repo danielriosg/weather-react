@@ -6,14 +6,12 @@
 }
 
 .app-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Make app-container take up the full height of #root */
 }
 
-main {
-  padding: 20px;
-}
+
 
 .card {
   padding: 2em;

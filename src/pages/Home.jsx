@@ -21,7 +21,7 @@ const Home = () => {
         onChange={(e) => setCity(e.target.value)}
         placeholder="Enter city name"
       />
-      <button onClick={handleSearch}>Get Weather</button>
+      <button className='get-weather-btn'onClick={handleSearch}>Get Weather</button>
 
       {weather && <WeatherCard weather={weather} />}
     </div>

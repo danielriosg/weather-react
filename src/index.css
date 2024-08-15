@@ -168,7 +168,7 @@ button:hover {
 }
 
 .get-weather-btn {
-  font-size: 0.6em; /* Smaller font size */
+  font-size: .9em; /* Smaller font size */
   padding: 8px 12px; /* Smaller padding */
   
 }

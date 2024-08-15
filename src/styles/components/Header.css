@@ -1,5 +1,4 @@
 .header {
-  background-color: #007bff;
   padding: 0 20px; 
   display: flex; 
   align-items: center; 
@@ -13,13 +12,10 @@
 }
 
 .nav-link {
-  color: #fff;
   font-weight: bold;
 }
 
-.nav-link:hover {
-  color: #ffcc00;
-}
+
 .header .dark-mode-toggle {
   font-size: 0.8em; /* Adjust font size */
   padding: 5px 10px; /* Adjust padding */

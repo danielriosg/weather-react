@@ -11,26 +11,50 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --header-background-color: #333;
+  --footer-background-color: #333;
+  --header-font-color: #fff;
+  --footer-font-color: #fff;
+  --header-link-color: #fff; /* Navbar link color for dark mode */
+  --header-link-hover-color: #535bf2; /* Hover color for dark mode */
 }
+
 
 :root.light-mode {
   color: #213547;
   background-color: #b9acac;
+  --header-background-color: #f9f9f9;
+  --footer-background-color: #f9f9f9;
+  --header-font-color: #213547; 
+  --footer-font-color: #213547; 
+  --header-link-color: #213547; /* Navbar link color for light mode */
+  --header-link-hover-color: #747bff; /* Hover color for light mode */
 }
+
+
+
 
 :root.dark-mode {
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+
+  --header-background-color: #333;
+  --footer-background-color: #333;
+  --header-font-color: #fff;
+  --footer-font-color: #fff;
+  --header-link-color: #fff; /* Navbar link color for dark mode */
+  --header-link-hover-color: #535bf2; /* Hover color for dark mode */
 }
+
+
 
 a {
   font-weight: 500;
-  color: #646cff;
+ 
   text-decoration: inherit;
 }
-a:hover {
-  color: #535bf2;
-}
+
 
 * {
   box-sizing: border-box;
@@ -80,10 +104,20 @@ box-sizing: border-box;
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: #333;
-  color: #fff;
+  
+  background-color: var(--header-background-color);
+  color: var(--header-font-color);
   padding: 10px;
 }
+.app-container header a {
+  color: var(--header-link-color); /* Use variable for navbar link color */
+  text-decoration: none;
+}
+
+.app-container header a:hover {
+  color: var(--header-link-hover-color); /* Use variable for navbar link hover color */
+}
+
 
 .app-container footer {
   position: fixed;
@@ -91,12 +125,19 @@ box-sizing: border-box;
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: #333;
-  color: #fff;
+  background-color: var(--footer-background-color);
+  color: var(--footer-font-color);
   padding: 10px;
 }
 
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
 
+a:hover {
+  color: var(--header-link-hover-color);
+}
 
 h1 {
   font-size: 3.2em;
@@ -127,7 +168,8 @@ button:hover {
 }
 
 .get-weather-btn {
-  
+  font-size: 0.6em; /* Smaller font size */
+  padding: 8px 12px; /* Smaller padding */
   
 }
 

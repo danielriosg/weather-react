@@ -25,6 +25,12 @@ const Home = () => {
     setCity(city);
     handleSearch();
   };
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
 
   return (
     <div className='home'>
@@ -34,6 +40,7 @@ const Home = () => {
           type='text'
           value={city}
           onChange={(e) => setCity(e.target.value)}
+          onKeyDown={handleKeyPress} 
           placeholder='Enter city name'
           list='recent-searches' // Add this attribute to connect the datalist
         />

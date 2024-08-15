@@ -26,6 +26,12 @@
 .get-weather-btn:hover {
   background-color: #3e8e41;
 }
+
+
+
+.home .weather-card {
+  margin-top: 20px; /* add 30px margin top to the WeatherCard container */
+}
 /* src/pages/About.css */
 .about {
   padding: 20px;

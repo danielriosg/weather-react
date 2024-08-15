@@ -37,10 +37,10 @@
 
 :root.dark-mode {
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #404040;
 
-  --header-background-color: #333;
-  --footer-background-color: #333;
+  --header-background-color: #262626;
+  --footer-background-color: #262626;
   --header-font-color: #fff;
   --footer-font-color: #fff;
   --header-link-color: #fff; /* Navbar link color for dark mode */

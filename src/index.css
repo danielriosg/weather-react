@@ -23,15 +23,15 @@
 
 :root.light-mode {
   color: #213547;
-  background-color: #b9acac;
-  --header-background-color: #f9f9f9;
-  --footer-background-color: #f9f9f9;
+  background-color: #A1C9F2;
+  --header-background-color: #E0F2F1;
+  --footer-background-color: #E0F2F1;
   --header-font-color: #213547; 
   --footer-font-color: #213547; 
   --header-link-color: #213547; /* Navbar link color for light mode */
   --header-link-hover-color: #747bff; /* Hover color for light mode */
 }
-
+/* #E0F2F1; */
 
 
 

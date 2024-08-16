@@ -1,24 +1,31 @@
-// src/services/weatherService.js
-const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;  // Access the API key from the .env file
+// utils/weatherAPI.js
 
-export const fetchWeather = async (city) => {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
+// Function to get latitude and longitude for a given city using Open-Meteo's geocoding API
+async function getCoordinates(city) {
+  const response = await fetch(
+    `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=en&format=json`
+  );
+  const data = await response.json();
 
+  if (data.results && data.results.length > 0) {
+    const { latitude, longitude } = data.results[0];
+    return { lat: latitude, lon: longitude };
+  } else {
+    throw new Error("City not found");
+  }
+}
+
+// Function to fetch weather data from Open-Meteo
+export async function fetchWeather(city) {
   try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error("Failed to fetch weather data");
-    }
+    const { lat, lon } = await getCoordinates(city);
+    const response = await fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto`
+    );
     const data = await response.json();
-
-    // Adjust the return object to match the OpenWeatherMap API structure
-    return {
-      city: data.name,
-      temperature: data.main.temp,
-      condition: data.weather[0].description,
-    };
+    return data;
   } catch (error) {
-    console.error(error);
+    console.error("Error fetching weather data:", error);
     return null;
   }
-};
+}

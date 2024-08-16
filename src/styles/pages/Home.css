@@ -26,6 +26,10 @@
 .get-weather-btn:hover {
   background-color: #3e8e41;
 }
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
 
 
 

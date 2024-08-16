@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import WeatherCard from '../components/WeatherCard';
-import { fetchWeather } from '../utils/weatherApi.js';
-import { storeSearch, getStoredSearches } from "../utils/utilities.js"; 
+import WeatherCard from "../components/WeatherCard";
+import { fetchWeather } from "../utils/weatherApi.js";
+import { storeSearch, getStoredSearches } from "../utils/utilities.js";
 import "../styles/pages/Home.css";
 
 const Home = () => {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
   const [recentSearches, setRecentSearches] = useState([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     // Load recent searches when the component mounts
@@ -15,22 +16,37 @@ const Home = () => {
   }, []);
 
   const handleSearch = async () => {
-    const weatherData = await fetchWeather(city);
-    setWeather(weatherData);
-    storeSearch(city);
-    setRecentSearches(getStoredSearches()); // Update recent searches after a new search
+    try {
+      const weatherData = await fetchWeather(city);
+      if (weatherData) {
+        setWeather(weatherData);
+        storeSearch(city);
+        setRecentSearches(getStoredSearches());
+        setError(""); // Clear any previous error messages
+      } else {
+        setError(
+          "Unable to retrieve weather data. Please check the city name for spelling errors and try again."
+        );
+        setWeather(null); // Clear the weather data if there's an error
+      }
+    } catch (err) {
+      setError(
+        "An error occurred while fetching weather data. Please try again later."
+      );
+      setWeather(null); // Clear the weather data if there's an error
+    }
   };
 
   const handleSelectRecent = (city) => {
     setCity(city);
     handleSearch();
   };
+
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       handleSearch();
     }
   };
-
 
   return (
     <div className='home'>
@@ -40,9 +56,9 @@ const Home = () => {
           type='text'
           value={city}
           onChange={(e) => setCity(e.target.value)}
-          onKeyDown={handleKeyPress} 
+          onKeyDown={handleKeyPress}
           placeholder='Enter city name'
-          list='recent-searches' // Add this attribute to connect the datalist
+          list='recent-searches'
         />
         <datalist id='recent-searches'>
           {recentSearches.map((search, index) => (
@@ -53,6 +69,8 @@ const Home = () => {
           Search
         </button>
       </div>
+      {error && <p className='error-message'>{error}</p>}{" "}
+      {/* Display error message if there's an error */}
       {weather && <WeatherCard weather={weather} />}
     </div>
   );

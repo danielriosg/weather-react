@@ -1,11 +1,11 @@
 .weather-card {
-  background-color: #fff;
   padding: 20px;
   border: 1px solid #ddd;
-    max-width: 500px;
+  max-width: 500px;
   margin: 0 auto;
   box-sizing: border-box; 
   border-radius: 10px;
+  background-color: var(--weather-card-background-color);
 }
 
 .current-weather {
@@ -33,7 +33,7 @@
 
 .forecast-day {
   flex: 1;
-  background-color: #f0f0f0;
+    background-color: var(--forecast-day-background-color);
   padding: 10px;
   border-radius: 5px;
   text-align: center;

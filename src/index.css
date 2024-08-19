@@ -30,6 +30,9 @@
   --footer-font-color: #213547; 
   --header-link-color: #213547; /* Navbar link color for light mode */
   --header-link-hover-color: #747bff; /* Hover color for light mode */
+    --weather-card-background-color: #e0f2f184; 
+--forecast-day-background-color: #f7f7f7; /* light mode background color */
+  --forecast-day-text-color: #333; /* light mode text color */
 }
 /* #E0F2F1; */
 
@@ -45,6 +48,9 @@
   --footer-font-color: #fff;
   --header-link-color: #fff; /* Navbar link color for dark mode */
   --header-link-hover-color: #535bf2; /* Hover color for dark mode */
+  --weather-card-background-color: hsl(0, 1%, 46%); 
+  --forecast-day-background-color: #333; /* dark mode background color */
+  --forecast-day-text-color: #fff; /* dark mode text color */
 }
 
 

@@ -7,6 +7,12 @@ export function getStoredSearches() {
 
 export function storeSearch(city) {
   const storedSearches = getStoredSearches();
-  storedSearches.push(city);
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(storedSearches));
+  // Add the new search to the start of the array
+  storedSearches.unshift(city);
+
+  // Keep only the last 5 searches
+  const limitedSearches = storedSearches.slice(0, 5);
+
+  // Store the limited array in localStorage
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(limitedSearches));
 }

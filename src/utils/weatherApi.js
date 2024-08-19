@@ -28,10 +28,23 @@ export async function fetchWeather(city) {
     }
 
     const data = await response.json();
-    return data;
+
+    // Format the data to match what WeatherCard expects
+    const formattedData = {
+      city_name: city, // Use the city name directly from the input
+      temperature: data.daily.temperature_2m_max[0], // Today's max temperature
+      condition: data.daily.weathercode[0], // Today's weather condition
+      daily: {
+        time: data.daily.time,
+        temperature_2m_max: data.daily.temperature_2m_max,
+        temperature_2m_min: data.daily.temperature_2m_min,
+        weathercode: data.daily.weathercode,
+      },
+    };
+
+    return formattedData;
   } catch (error) {
     console.error("Error fetching weather data:", error);
     return null;
   }
 }
-

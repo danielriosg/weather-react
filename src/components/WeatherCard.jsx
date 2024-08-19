@@ -59,27 +59,34 @@ const WeatherCard = ({ weather }) => {
     }
   }
 
+  
   return (
-  <div className='weather-card'>
-    <h2>{weather.city_name}</h2>
-    <div className='forecast'>
-      {weather.daily && weather.daily.time.length > 0 ? (
-        weather.daily.time.map((day, index) => (
-          <div key={index} className='forecast-day'>
-            <p>{new Date(day).toLocaleDateString()}</p> {/* Convert the date string to a readable format */}
-            <p>{getWeatherIcon(weather.daily.weathercode[index])}</p>
-            <p>
-              {weather.daily.temperature_2m_min[index]}°C /{" "}
-              {weather.daily.temperature_2m_max[index]}°C
-            </p>
-          </div>
-        ))
-      ) : (
-        <p>Loading forecast data...</p> 
-      )}
+    <div className='weather-card'>
+      {/* Current weather */}
+      <h2>{weather.city_name}</h2>
+      <p>Temperature: {weather.temperature}°C</p>
+      <p>Condition: {getWeatherIcon(weather.condition)}</p>{" "}
+      {/* Display the weather icon */}
+      {/* 5-Day Forecast */}
+      <div className='forecast'>
+        {weather.daily && weather.daily.time.length > 0 ? (
+          weather.daily.time.slice(1).map((day, index) => (
+            <div key={index} className='forecast-day'>
+              <p>{new Date(day).toLocaleDateString()}</p>{" "}
+              {/* Convert the date string to a readable format */}
+              <p>{getWeatherIcon(weather.daily.weathercode[index + 1])}</p>
+              <p>
+                {weather.daily.temperature_2m_min[index + 1]}°C /{" "}
+                {weather.daily.temperature_2m_max[index + 1]}°C
+              </p>
+            </div>
+          ))
+        ) : (
+          <p>Loading forecast data...</p>
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default WeatherCard;

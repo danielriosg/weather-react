@@ -70,18 +70,20 @@ const capitalizeFirstLetter = (string) => {
   
   return (
     <div className='weather-card'>
-      <div className="current-weather">
-      <h2>{capitalizeFirstLetter(weather.city_name)}</h2>
-      <p>Temperature: {weather.temperature}°C</p>
-      <p>Condition: {getWeatherIcon(weather.condition)}</p>{" "}
+      <div className='current-weather'>
+        <h2>{capitalizeFirstLetter(weather.city_name)}</h2>
+        <h3>{getWeatherIcon(weather.condition)}</h3>{" "}
+        <p>{weather.temperature}°C</p>
       </div>
       <div className='forecast'>
         {weather.daily && weather.daily.time.length > 0 ? (
           weather.daily.time.slice(1).map((day, index) => (
             <div key={index} className='forecast-day'>
-              <p>{new Date(day).toLocaleDateString()}</p>{" "}
+              <h4>{new Date(day).toLocaleDateString()}</h4>{" "}
               {/* Convert the date string to a readable format */}
-              <p>{getWeatherIcon(weather.daily.weathercode[index + 1])}</p>
+              <p className='forecast-day-icon'>
+                {getWeatherIcon(weather.daily.weathercode[index + 1])}
+              </p>
               <p>
                 {weather.daily.temperature_2m_min[index + 1]}°C /{" "}
                 {weather.daily.temperature_2m_max[index + 1]}°C

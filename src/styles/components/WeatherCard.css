@@ -14,6 +14,15 @@
   border-radius: 5px;
   text-align: center;
 }
+
+.current-weather h3 {
+  font-size: 2rem; /* Adjust this value as needed */
+}
+.current-weather p {
+  font-size: 1.3rem; /* Adjust this value as needed */
+}
+
+
 .forecast {
   display: flex;
   justify-content: space-between;
@@ -36,6 +45,11 @@
 .forecast-day p {
   margin: 5px 0;
 }
+
+.forecast-day-icon {
+  font-size: 1.6rem; /* Adjust this value as needed */
+}
+
 
 .weather-card h2 {
   font-size: 24px;

@@ -2,6 +2,39 @@
   background-color: #fff;
   padding: 20px;
   border: 1px solid #ddd;
+    max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box; 
+  border-radius: 10px;
+}
+
+.current-weather {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+.forecast {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Add spacing between each day */
+  flex-wrap: wrap; /* Allow items to wrap if necessary */
+  max-width: 100%; 
+}
+
+.forecast-day {
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Include padding/border in width */
+  min-width: calc(33% - 20px); /* Make sure it's responsive, 33% of the row */
+}
+
+.forecast-day p {
+  margin: 5px 0;
 }
 
 .weather-card h2 {

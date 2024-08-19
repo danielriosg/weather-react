@@ -1,5 +1,7 @@
 // components/WeatherCard.jsx
 import React from "react";
+import "../styles/components/WeatherCard.css";
+
 
 const WeatherCard = ({ weather }) => {
   if (!weather) {
@@ -68,12 +70,11 @@ const capitalizeFirstLetter = (string) => {
   
   return (
     <div className='weather-card'>
-      {/* Current weather */}
+      <div className="current-weather">
       <h2>{capitalizeFirstLetter(weather.city_name)}</h2>
       <p>Temperature: {weather.temperature}°C</p>
       <p>Condition: {getWeatherIcon(weather.condition)}</p>{" "}
-      {/* Display the weather icon */}
-      {/* 5-Day Forecast */}
+      </div>
       <div className='forecast'>
         {weather.daily && weather.daily.time.length > 0 ? (
           weather.daily.time.slice(1).map((day, index) => (

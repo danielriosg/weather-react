@@ -16,3 +16,9 @@ export function storeSearch(city) {
   // Store the limited array in localStorage
   localStorage.setItem(STORAGE_KEY, JSON.stringify(limitedSearches));
 }
+export function formatDate(dateString) {
+  const date = new Date(dateString);
+  const options = { weekday: "short", day: "numeric" };
+  return date.toLocaleDateString("en-US", options);
+}
+

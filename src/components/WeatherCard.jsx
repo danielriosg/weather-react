@@ -1,5 +1,6 @@
 // components/WeatherCard.jsx
 import React from "react";
+import { formatDate } from "../utils/utilities.js";
 import "../styles/components/WeatherCard.css";
 
 
@@ -79,7 +80,7 @@ const capitalizeFirstLetter = (string) => {
         {weather.daily && weather.daily.time.length > 0 ? (
           weather.daily.time.slice(1).map((day, index) => (
             <div key={index} className='forecast-day'>
-              <h4>{new Date(day).toLocaleDateString()}</h4>{" "}
+              <h4>{formatDate(day)}</h4> {/* Apply the formatDate function */}
               {/* Convert the date string to a readable format */}
               <p className='forecast-day-icon'>
                 {getWeatherIcon(weather.daily.weathercode[index + 1])}

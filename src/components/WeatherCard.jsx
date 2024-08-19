@@ -10,6 +10,12 @@ const WeatherCard = ({ weather }) => {
       </p>
     );
   }
+const capitalizeFirstLetter = (string) => {
+  if (!string) return "";
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+
   function getWeatherIcon(weatherCode) {
     switch (weatherCode) {
       case 0:
@@ -63,7 +69,7 @@ const WeatherCard = ({ weather }) => {
   return (
     <div className='weather-card'>
       {/* Current weather */}
-      <h2>{weather.city_name}</h2>
+      <h2>{capitalizeFirstLetter(weather.city_name)}</h2>
       <p>Temperature: {weather.temperature}°C</p>
       <p>Condition: {getWeatherIcon(weather.condition)}</p>{" "}
       {/* Display the weather icon */}

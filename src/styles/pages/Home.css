@@ -3,6 +3,7 @@
 }
 .home h1 {
   margin-bottom: 20px; /* add space between title and search bar */
+  padding-top: 10px;
 }
 
 .home input {

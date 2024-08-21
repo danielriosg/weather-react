@@ -13,16 +13,18 @@ import {
 const Contact = () => {
   return (
     <div className='contact-container'>
-      <h2>Contact Me</h2>
+      <h1>Contact Me</h1>
       <div className='contact-info'>
         <div className='contact-item'>
           <FontAwesomeIcon icon={faEnvelope} />
-          <a href='mailto:your-email@example.com'>your-email@example.com</a>
+          <a href='mailto:ever.rios.gonzalez@gmail.com'>Gmail</a>
         </div>
         <div className='contact-item'>
           <FontAwesomeIcon icon={faLinkedin} />
           <a
-            href='https://www.linkedin.com/in/your-profile'
+            href='https://www.linkedin.com/in/daniel-rios-142619111
+
+'
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -32,7 +34,7 @@ const Contact = () => {
         <div className='contact-item'>
           <FontAwesomeIcon icon={faGithub} />
           <a
-            href='https://github.com/your-username'
+            href='https://github.com/danielriosg'
             target='_blank'
             rel='noopener noreferrer'
           >

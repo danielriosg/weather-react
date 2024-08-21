@@ -1,0 +1,20 @@
+.contact-container h1 {
+    margin-bottom: 20px;
+    padding-top: 10px;
+    color: var(--contact-link-color);
+}
+
+
+.contact-item a {
+  color: var(--contact-link-color); /* Use the link color variable */
+  text-decoration: none; /* Optional: Remove underline */
+}
+
+.contact-item a:hover {
+  color: var(--contact-link-hover-color); /* Use the hover color variable */
+}
+
+.contact-item svg {
+  color: var(--contact-link-color); /* Apply color to the icons as well */
+  margin-right: 8px; /* Add some spacing between icon and text */
+}

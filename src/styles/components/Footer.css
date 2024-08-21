@@ -13,8 +13,14 @@
   align-items: center; /* Center the content horizontally */
 }
 
+.footer p:last-child {
+  display: inline-flex; /* Use inline-flex to align the icon and text */
+  align-items: center; /* Center-aligns the icon with the text vertically */
+}
 
-
+.github-link {
+  margin-left: 0.5rem; /* Adds space between the text and the icon */
+}
 
 
 @media (max-width: 768px) {

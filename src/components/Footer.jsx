@@ -6,7 +6,9 @@ import "../styles/components/Footer.css";
 const Footer = () => {
   return (
     <footer className='footer'>
-      <p>Contact: ever.rios.gonzalez@gmail.com</p>
+      <p>
+        WeatherApp 2024 <sup>®</sup>
+      </p>
       <p>
         View the code on GitHub:
         <a

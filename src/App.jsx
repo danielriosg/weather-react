@@ -13,9 +13,9 @@ function App() {
       <Header />
       <main className='main'>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
+          <Route path='/weather-react/' element={<Home />} />
+          <Route path='/weather-react/about' element={<About />} />
+          <Route path='/weather-react/contact' element={<Contact />} />
         </Routes>
       </main>
       <Footer />

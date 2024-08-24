@@ -9,18 +9,21 @@ import "./App.css"; // Importing the app-specific CSS
 
 function App() {
   return (
-    <div className='app-container'>
-      <Header />
-      <main className='main'>
-        <Routes>
-          <Route path='/weather-react/' element={<Home />} />
-          <Route path='/weather-react/about' element={<About />} />
-          <Route path='/weather-react/contact' element={<Contact />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter basename='/weather-react'>
+      <div className='app-container'>
+        <Header />
+        <main className='main'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='about' element={<About />} />
+            <Route path='contact' element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
+
 
 export default App;

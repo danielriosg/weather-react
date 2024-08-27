@@ -60,4 +60,4 @@ To get a local copy of this project up and running, follow these steps:
 The app uses the [Open Meteo API](https://open-meteo.com/) to retrieve weather data. Specifically, it utilizes the Geocoding API to obtain location coordinates and fetch weather information based on those coordinates.
 
 
-For any questions or feedback, please contact me at [your-email@example.com](mailto:your-email@example.com).
+
